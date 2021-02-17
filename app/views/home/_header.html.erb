@@ -13,11 +13,14 @@
         </li>
       
         <li class="nav-item">
+        <% if user_signed_in? %>
          <%= link_to 'View Friends', friends_path, class:'nav-link active'%>
-    
+        <% end %>
         </li>
         <li class="nav-item">
+        <% if user_signed_in? %>
          <%= link_to 'Add a Friend', new_friend_path, class:'nav-link active'%>
+        <% end %>
     
         </li>
         <li class="nav-item">
@@ -27,16 +30,20 @@
     
         </li>
         <li class="nav-item">
+        <% if !user_signed_in? %>
          <%= link_to 'Log In', new_user_session_path, class:'nav-link active'%>
-    
+        <% end %>
         </li>
+        
         <li class="nav-item">
         <% if user_signed_in? %>
          <%= link_to 'Sign Out',  destroy_user_session_path, method: :delete, class:'nav-link active'%>
         <% end %>
         </li>
         <li class="nav-item">
+        <% if user_signed_in? %>
          <%= link_to 'Edit Profile',  edit_user_registration_path, class:'nav-link active'%>
+        <% end %>
 
         </li>
       
